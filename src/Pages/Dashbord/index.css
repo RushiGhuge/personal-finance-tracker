@@ -1,0 +1,17 @@
+.dashbord-container {
+    /* background: var(--gray-bg); */
+}
+
+.balance-container {
+    background: linear-gradient(45deg, #2e22ac, #e04b9d);
+    color: white;
+}
+
+.mybg {
+    background: var(--gray-bg);
+}
+
+.history-container {
+    background: var(--gray-bg);
+}
+
