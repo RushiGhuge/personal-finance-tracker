@@ -1,18 +1,18 @@
 import { Backdrop, Button, CircularProgress, TextField } from '@mui/material'
 import React, { useState } from 'react'
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, db, provider } from '../../FireBase/firebase';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { AddUser } from '../../Redux/Reducers/UserSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 const SignIn = () => {
 
     const dispatch = useDispatch();
-  
+
 
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);

@@ -6,7 +6,7 @@ import HistoryIcon from '@mui/icons-material/History';
 import { IconButton, Tooltip } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { signOut } from "firebase/auth";
-import { auth, doc } from '../../FireBase/firebase';
+import { auth } from '../../FireBase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { themeSwitcher } from '../../Redux/Reducers/ThemeSlice';

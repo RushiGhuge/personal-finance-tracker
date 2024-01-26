@@ -1,13 +1,15 @@
-import { Button, IconButton, Pagination, Tooltip } from '@mui/material';
+import { IconButton, Pagination, Tooltip } from '@mui/material';
 import FormatedNumber from '../../Functions/FormatedNumber';
 import { useState } from 'react';
-import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { db } from '../../FireBase/firebase';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import ModalForUpdation from '../Modal/ModalForUpdation';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+
+const ModalForUpdation = lazy(() => import('../Modal/ModalForUpdation'))
+
 
 const TableHistory = ({ transitionData }) => {
 
@@ -32,20 +34,7 @@ const TableHistory = ({ transitionData }) => {
         }
     }
 
-    // const updateTransition = async (id) => {
-    //     try {
-    //         let frankDocRef = doc(db, `users/${user.uid}/transactions/${id}`);
-    //         await updateDoc(frankDocRef, {
-    //             name: 'Ambani',
-    //             tag: 'Fule',
-    //             amount: '101010'
-    //         });
-    //         toast.success('Update Successful 👍')
-    //     }
-    //     catch (e) {
-    //         toast.error(e.message)
-    //     }
-    // }
+
 
     return (
         <main className='pt-10 overflow-x-auto'>

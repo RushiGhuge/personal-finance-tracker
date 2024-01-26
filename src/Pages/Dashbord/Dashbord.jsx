@@ -1,5 +1,5 @@
 import './index.css'
-import React, { Suspense, lazy, useEffect, useState } from 'react'
+import React, {lazy, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../../FireBase/firebase'
@@ -39,7 +39,7 @@ const Dashbord = () => {
   
 
   return (
-    <Suspense fallback={<SkeletonComponant />} className='w-full'>
+    <div className='w-full'>
       <section className='flex w-full'>
 
         <section className='w-3'>
@@ -82,7 +82,7 @@ const Dashbord = () => {
         <History />
       </div>
 
-    </Suspense>
+    </div>
   )
 }
 

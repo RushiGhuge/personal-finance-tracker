@@ -4,9 +4,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Autocomplete, TextField } from '@mui/material';
 import { useState } from 'react';
-import { addDoc, collection, doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { useDispatch, useSelector } from 'react-redux';
-import { set, ref } from "firebase/database"
 import { toast } from 'react-toastify';
 import { db } from '../../FireBase/firebase';
 import { addTransition } from '../../Redux/Reducers/AccountDataSlice';

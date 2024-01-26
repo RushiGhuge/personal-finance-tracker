@@ -1,19 +1,19 @@
-
-import TableHistory from './TableHistory'
 import './index.css'
 import { onSnapshot, query, collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { useDispatch, useSelector } from 'react-redux';
 import { db } from '../../FireBase/firebase';
 import { addTransition } from '../../Redux/Reducers/AccountDataSlice';
-import { useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { Button } from '@mui/material';
-import EmptyHistory from './EmptyHistory';
 import { parse, unparse } from 'papaparse';
 import { toast } from 'react-toastify';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+
+const EmptyHistory = lazy(() => import('./EmptyHistory'))
+const TableHistory = lazy(() => import('./TableHistory'))
 
 
 
@@ -22,7 +22,7 @@ const History = () => {
   const [input, setInput] = useState('');
   const [typeInput, setTypeInput] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('None');
- 
+
 
   // console.log(typeInput);
   const dispatch = useDispatch();
@@ -102,7 +102,7 @@ const History = () => {
             const docRef = await addDoc(collection(db, `users/${user.uid}/transactions`), result.data[i])
             let frankDocRef = doc(db, `users/${user.uid}/transactions/${docRef.id}`);
             await updateDoc(frankDocRef, {
-                id:docRef.id
+              id: docRef.id
             });
           }
           toast.success('Transaction Success!')

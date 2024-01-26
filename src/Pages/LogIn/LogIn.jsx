@@ -1,6 +1,6 @@
 import { Backdrop, Button, CircularProgress, TextField } from '@mui/material'
 import React, { useState } from 'react'
-import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, db, provider } from '../../FireBase/firebase';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
