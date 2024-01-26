@@ -6,12 +6,12 @@ import { Provider } from 'react-redux'
 import store from './Redux/store.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import ErrorBoundaris from './Componants/ErrorBoundaris/ErrorBoundaris.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <HashRouter>
     <React.StrictMode>
       <ErrorBoundaris>
         <ToastContainer autoClose={600}/>
@@ -20,5 +20,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Provider>
       </ErrorBoundaris>
     </React.StrictMode>
-  </BrowserRouter>
+  </HashRouter>
 )
