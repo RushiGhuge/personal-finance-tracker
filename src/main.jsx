@@ -10,8 +10,9 @@ import ErrorBoundaris from './Componants/ErrorBoundaris/ErrorBoundaris.jsx'
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HashRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter basename='/'>
     <React.StrictMode>
       <ErrorBoundaris>
         <ToastContainer autoClose={600}/>

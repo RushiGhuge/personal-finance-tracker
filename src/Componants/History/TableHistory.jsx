@@ -1,6 +1,6 @@
 import { IconButton, Pagination, Tooltip } from '@mui/material';
 import FormatedNumber from '../../Functions/FormatedNumber';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from '../../FireBase/firebase';
 import { useSelector } from 'react-redux';
