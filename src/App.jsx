@@ -13,24 +13,24 @@ const Dashbord = lazy(() => import('./Pages/Dashbord/Dashbord'))
 
 
 
-function App() {  
+function App() {
 
   const theme = useTheme();
   const colorMode = useSelector((state) => state.Theme.theme);
   const newTheme = createTheme({ palette: { mode: colorMode || 'light' } });
 
   return (
-    <Suspense fallback={<SkeletonComponant />}>
-
-      <ThemeProvider theme={newTheme}>
-        <Routes>
-          <Route path='/' element={<> <Navbar /> <SignIn /> </>} />
-          <Route path='/login' element={<> <Navbar /> <LogIn /> </>} />
-          <Route path='/dashbord' element={<Dashbord />} />
-        </Routes>
-      </ThemeProvider>
-
-    </Suspense>
+    <main>
+      <Suspense fallback={<SkeletonComponant />}>
+        <ThemeProvider theme={newTheme}>
+          <Routes>
+            <Route path='/' element={<> <Navbar /> <SignIn /> </>} />
+            <Route path='/login' element={<> <Navbar /> <LogIn /> </>} />
+            <Route path='/dashbord' element={<Dashbord />} />
+          </Routes>
+        </ThemeProvider>
+      </Suspense>
+    </main>
   )
 }
 

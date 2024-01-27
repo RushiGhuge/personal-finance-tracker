@@ -1,11 +1,12 @@
 import { Backdrop, Button, CircularProgress, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, db, provider } from '../../FireBase/firebase';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AddUser } from '../../Redux/Reducers/UserSlice';
+import { themeSwitcher } from '../../Redux/Reducers/ThemeSlice';
 
 const LogIn = () => {
 
@@ -54,6 +55,12 @@ const LogIn = () => {
             });
     }
 
+    useEffect(() => {
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+            dispatch(themeSwitcher('dark'))
+        }
+    }, [])
 
     function signInWithGooglePopUp() {
         signInWithPopup(auth, provider)
@@ -106,9 +113,9 @@ const LogIn = () => {
         <div className="">
 
             <div className='flex flex-col gap-10 justify-center items-center h-full w-full'>
-                <h1 className="text-3xl font-bold">🤑 Log In On Financely 💸</h1>
+                <h1 className="text-3xl font-bold dark:text-slate-200">🤑 Log In On Financely 💸</h1>
 
-                <form onSubmit={handelSubmit} className="flex flex-col w-96 items-center border-2 p-5 gap-3 rounded-lg bg-slate-100">
+                <form onSubmit={handelSubmit} className="flex flex-col w-96 items-center shadow-xl p-5 gap-3 rounded-lg bg-white dark:bg-black/25">
 
                     <TextField name={'email'} value={user.email} fullWidth label="Email" variant="standard" onChange={(e) => { handelChange(e, e.target.name) }} />
                     <TextField name={'password'} value={user.password} fullWidth type='password' label="Password" variant="standard" onChange={(e) => { handelChange(e, e.target.name) }} />

@@ -180,7 +180,7 @@ const History = () => {
         <div className='flex gap-2'>
           <Button onClick={exportToCsv} variant="outlined">Export To CSV</Button>
           <Button variant="contained">
-            <label for="file">
+            <label htmlFor="file">
               Import From CSV
             </label>
           </Button>

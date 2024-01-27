@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import LogoutIcon from '@mui/icons-material/Logout';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -31,11 +31,20 @@ const SideNavbar = () => {
 
     }
 
+    useEffect(() => {
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+            dispatch(themeSwitcher('dark'))
+        }
+    }, [])
+
     const toggleTheme = () => {
         if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'light');
             document.documentElement.classList.remove('dark')
             dispatch(themeSwitcher('light'))
         } else {
+            localStorage.setItem('theme', 'dark')
             document.documentElement.classList.add('dark')
             dispatch(themeSwitcher('dark'))
         }

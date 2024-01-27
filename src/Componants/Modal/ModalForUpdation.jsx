@@ -36,9 +36,6 @@ const tagsOptions = [
 
 const ModalForUpdation = ({ open, setOpen, transition, uid, setUpdateTransition }) => {
 
-
-    console.log(transition, uid);
-
     if(transition === null ) return;
 
     const [formData, setFormData] = useState(transition)
@@ -71,6 +68,7 @@ const ModalForUpdation = ({ open, setOpen, transition, uid, setUpdateTransition 
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                className="backdrop-blur-sm"
             >
                 <Box sx={style} className="bg-slate-200 dark:bg-slate-800" >
 
@@ -108,7 +106,7 @@ const ModalForUpdation = ({ open, setOpen, transition, uid, setUpdateTransition 
 
                         <div className='flex w-full items-center justify-between mt-10'>
                             <Button className='text-slate-900 dark:text-slate-100' onClick={handleClose} variant="outline">Cancel</Button>
-                            <Button className='text-slate-900 dark:text-slate-100' type='submit'>Add</Button>
+                            <Button className='text-slate-900 dark:text-slate-100' type='submit'>Update</Button>
                         </div>
                     </form>
                 </Box>

@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [user])
 
   return (
-    <nav className="w-full p-3 mb-10 bg-blue-500 flex justify-between text-white font-bold">
+    <nav className="w-full p-3 mb-10 bg-blue-400 dark:bg-blue-500/30 flex justify-between text-white font-bold">
       <h1>Financly.</h1>
       <Link to={'/dashbord'}>Dashbord</Link>
     </nav>

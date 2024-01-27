@@ -66,7 +66,7 @@ export default function BasicModal({ open, setOpen, handleOpen, isCredit }) {
             )
             let frankDocRef = doc(db, `users/${user.uid}/transactions/${docRef.id}`);
             await updateDoc(frankDocRef, {
-                id:docRef.id
+                id: docRef.id
             });
 
             toast.success('Transaction Success!')
@@ -88,6 +88,7 @@ export default function BasicModal({ open, setOpen, handleOpen, isCredit }) {
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                className="backdrop-blur-sm"
             >
                 <Box sx={style} className="bg-slate-200 dark:bg-slate-800" >
 

@@ -15,7 +15,7 @@ const AllExpenses = () => {
 
   const expenceArr = useSelector(((state) => state.accountData.expencesArray))
 
-  console.log(expenceArr);
+
 
   const map = new Map();
   expenceArr.forEach((ele, ind) => {
@@ -37,7 +37,7 @@ const AllExpenses = () => {
     )
   })
 
-  console.log(map);
+  
 
 
   return (
@@ -50,21 +50,21 @@ const AllExpenses = () => {
           series={[
             {
               data: data,
-              innerRadius: 20,
+              innerRadius: 0,
               outerRadius: 100,
-              paddingAngle: 2,
+              paddingAngle: 0,
               cornerRadius: 3,
               startAngle: -180,
               endAngle: 180,
               cx: 120,
               cy: 120,
-              // highlightScope: { faded: 'global', highlighted: 'item' },
+              highlightScope: { faded: 'global', highlighted: 'item' },
               faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
             },
 
           ]}
 
-          height={400}
+          height={350}
           {...sizing}
         />
       </div>

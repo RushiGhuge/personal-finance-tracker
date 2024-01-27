@@ -6,7 +6,7 @@ const Balance = () => {
     const totalBalance = useSelector((s) => s.accountData.totalBalance)
 
     return (
-        <div >
+        <div className="backdrop-blur-md" >
             <span className="text-slate-50 font-bold">Balance</span>
             <h1 className="font-bold text-3xl italic text-slate-50 ">₹ {FormatedNumber(totalBalance)}</h1>
 
