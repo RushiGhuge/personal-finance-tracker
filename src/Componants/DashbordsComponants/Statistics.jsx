@@ -3,19 +3,14 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import { useSelector } from 'react-redux';
 
 
-const Statistics = () => {
+const Statistics = ({ fullscreen }) => {
 
   const { expencesArray, incomesArray, datesArray } = useSelector((state) => state.accountData)
 
 
-  // console.log(expencesArray, incomesArray, datesArray);
-
   // convert the object into numbers
   const expenceArr = expencesArray.map((ele) => ele.amount);
 
-  // const xLabels = [
-  //   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
-  // ];
 
   const datesArrayConverted = datesArray.map((date) => {
     const formattedDate = new Date(date * 1000).toLocaleTimeString([], { hour: 'numeric', minute: 'numeric' });
@@ -29,7 +24,7 @@ const Statistics = () => {
       <div className='text-red-900'>
         <LineChart
           color="inherit"
-          height={400}
+          height={fullscreen ? 570 : 400}
           margin={{
             left: 60,
             right: 40,
@@ -45,7 +40,7 @@ const Statistics = () => {
               scale: '0.6',
               fill: '#fff',
               strokeWidth: 5,
-              zIndex:100
+              zIndex: 100
             },
           }}
           series={[

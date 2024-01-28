@@ -24,7 +24,7 @@ html {
 
 /* Add custom styles to the scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

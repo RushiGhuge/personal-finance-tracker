@@ -116,25 +116,18 @@ const History = () => {
   }
 
   return (
-    <main className='w-full flex flex-col gap-4  bg-slate-100 dark:bg-slate-900 p-1'>
+    <main className='w-full flex flex-col gap-4  bg-slate-100 dark:bg-slate-900 p-6 max-sm:p-3'>
 
       <div className='flex justify-between'>
         <h1 className='text-slate-700 dark:text-slate-200 font-bold text-2xl'>History Transitions</h1>
       </div>
 
-      <div className='flex gap-4 '>
+      <div className='flex gap-4 max-sm:flex-col'>
 
         <form className="flex w-full gap-4 rounded-md px-3  bg-slate-50 text-slate-900 dark:text-slate-50 dark:bg-slate-700">
           <input value={input} onChange={(e) => setInput(e.target.value)} type="text" className="w-full pl-2 outline-none rounded-full bg-transparent" placeholder='Search' />
           <Button>Search</Button>
         </form>
-
-
-        {/* <select className="bg-slate-50 px-3 rounded-md outline-none" value={typeInput} onChange={(e) => setTypeInput(e.target.value)} defaultValue={10}>
-          <option value=''>All</option>
-          <option value='Credit'>Credits</option>
-          <option value='Debit'>Debits</option>
-        </select> */}
 
         <div className="w-32">
           <FormControl variant="outlined" fullWidth size='small'>
@@ -155,7 +148,7 @@ const History = () => {
 
       </div>
 
-      <div className="flex justify-end items-center gap-3 pt-3">
+      <div className="flex justify-end items-center gap-3 pt-3 max-sm:justify-center max-sm:flex-col">
 
         <div>
           <FormControl variant="outlined" fullWidth size='small'>
@@ -177,7 +170,7 @@ const History = () => {
           </FormControl>
         </div>
 
-        <div className='flex gap-2'>
+        <div className='flex gap-2  max-sm:flex-row'>
           <Button onClick={exportToCsv} variant="outlined">Export To CSV</Button>
           <Button variant="contained">
             <label htmlFor="file">

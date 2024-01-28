@@ -88,12 +88,13 @@ const ProfilePage = ({ profileOpen, setProfileOpen, user }) => {
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
-                
+                // sx={{ background: 'blue' }}
+                className="backdrop-blur-sm bg-transparent"
             >
-                <div>
+                <div className='bg-slate-100 dark:bg-slate-900    text:slate-900 backdrop-sm w-screen h-screen'>
 
-                    <AppBar sx={{ position: 'relative' }} className="backdrop-blur-lg">
-                        <Toolbar>
+                    <AppBar sx={{ position: 'relative' }} className='bg-slate-900 dark:bg-slate-200'>
+                        <Toolbar className='bg-slate-800 w-full dark:bg-slate-800'>
                             <IconButton
                                 edge="start"
                                 color="inherit"

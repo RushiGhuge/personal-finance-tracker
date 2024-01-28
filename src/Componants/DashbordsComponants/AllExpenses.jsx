@@ -11,11 +11,9 @@ const sizing = {
   },
 };
 
-const AllExpenses = () => {
+const AllExpenses = ({fullscreen}) => {
 
   const expenceArr = useSelector(((state) => state.accountData.expencesArray))
-
-
 
   const map = new Map();
   expenceArr.forEach((ele, ind) => {

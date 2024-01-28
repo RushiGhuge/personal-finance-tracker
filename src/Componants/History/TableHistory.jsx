@@ -56,58 +56,60 @@ const TableHistory = ({ transitionData }) => {
 
 
     return (
-        <main className='pt-10 overflow-x-auto'>
-            <table className="rounded-md w-full text-left histroy-table text-slate-900 dark:text-slate-50 bg-slate-50 dark:bg-black/10  ">
+        <main className='pt-10 w-full' >
+            <div className="w-full  flex overflow-auto   ">
+                <table className="rounded-md w-full text-left histroy-table text-slate-900 dark:text-slate-50 bg-slate-50 dark:bg-black/10  ">
 
-                <thead>
-                    <tr className="">
-                        <th>Name</th>
-                        <th>Credit/Debit</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Tag</th>
-                        <th>Edit/Delete</th>
-                    </tr>
-                </thead>
+                    <thead>
+                        <tr className="">
+                            <th className="min-w-32 ">Name</th>
+                            <th className="min-w-32 ">Credit/Debit</th>
+                            <th className="min-w-32 ">Amount</th>
+                            <th className="min-w-32 ">Date</th>
+                            <th className="min-w-32 ">Tag</th>
+                            <th className="min-w-32 ">Edit/Delete</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    {data.map((transaction, id) => {
+                    <tbody>
+                        {data.map((transaction, id) => {
 
-                        const formattedDate = new Date(transaction.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                        });
+                            const formattedDate = new Date(transaction.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                            });
 
-                        return (
-                            <tr key={transaction.id}>
-                                <td>{transaction.name}</td>
-                                <td >
-                                    <span className={`${transaction.type === 'Credit' ? 'bg-green-300 text-green-950' : 'bg-red-300 text-red-950'} px-2 py-1 rounded-md`}>
-                                        {transaction.type}
-                                    </span>
-                                </td>
-                                <td>₹{FormatedNumber(Number(transaction.amount))}</td>
-                                <td>{formattedDate}</td>
-                                <td>{transaction.tag}</td>
-                                <td className='flex gap-1'>
+                            return (
+                                <tr key={transaction.id}>
+                                    <td>{transaction.name}</td>
+                                    <td >
+                                        <span className={`${transaction.type === 'Credit' ? 'bg-green-300 text-green-950' : 'bg-red-300 text-red-950'} px-2 py-1 rounded-md`}>
+                                            {transaction.type}
+                                        </span>
+                                    </td>
+                                    <td>₹{FormatedNumber(Number(transaction.amount))}</td>
+                                    <td>{formattedDate}</td>
+                                    <td>{transaction.tag}</td>
+                                    <td className='flex gap-1'>
 
-                                    <Tooltip title="Edit" arrow>
-                                        <IconButton onClick={() => {
-                                            setUpdateTransition(transaction)
-                                            setOpenModal(true)
-                                        }}><EditIcon /></IconButton>
-                                    </Tooltip>
+                                        <Tooltip title="Edit" arrow>
+                                            <IconButton onClick={() => {
+                                                setUpdateTransition(transaction)
+                                                setOpenModal(true)
+                                            }}><EditIcon /></IconButton>
+                                        </Tooltip>
 
-                                    <Tooltip title="Delete" arrow>
-                                        <IconButton onClick={() => handleClickOpen(transaction.id)}><DeleteIcon /></IconButton>
-                                    </Tooltip>
-                                </td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+                                        <Tooltip title="Delete" arrow>
+                                            <IconButton onClick={() => handleClickOpen(transaction.id)}><DeleteIcon /></IconButton>
+                                        </Tooltip>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </div>
 
             <div className='flex mt-10 justify-center    '>
                 <Pagination count={Math.ceil(transitionData.length / 10)} page={page} variant="outlined" shape="rounded" onChange={(e, value) => setPage(value)} />

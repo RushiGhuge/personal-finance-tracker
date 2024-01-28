@@ -26,7 +26,7 @@ function App() {
           <Routes>
             <Route path='/' element={<> <Navbar /> <SignIn /> </>} />
             <Route path='/login' element={<> <Navbar /> <LogIn /> </>} />
-            <Route path='/dashbord' element={<Dashbord />} />
+            <Route path='/dashbord/*' element={<Dashbord />} />
           </Routes>
         </ThemeProvider>
       </Suspense>

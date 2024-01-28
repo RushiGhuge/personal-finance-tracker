@@ -7,7 +7,7 @@ import { IconButton, Tooltip } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { signOut } from "firebase/auth";
 import { auth } from '../../FireBase/firebase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { themeSwitcher } from '../../Redux/Reducers/ThemeSlice';
 
@@ -51,26 +51,31 @@ const SideNavbar = () => {
     }
 
     return (
-        <nav className="w-12 fixed bg-slate-50 dark:bg-slate-900 text-slate-100 h-screen pt-14 z-10 flex flex-col items-center gap-2">
+        <nav className="fixed bg-slate-50 dark:bg-slate-900 text-slate-100 h-screen pt-14 z-10 flex flex-col items-center gap-2">
 
             <Tooltip title="Dashbord" placement='right' arrow>
-                <IconButton className='text-slate-600 dark:text-slate-50'>
-                    <DashboardIcon />
-                </IconButton>
+                <Link to=''>
+                    <IconButton className='text-slate-600 dark:text-slate-50'>
+                        <DashboardIcon />
+                    </IconButton>
+                </Link>
             </Tooltip>
-
 
 
             <Tooltip title="History" placement='right' arrow>
-                <IconButton className='text-slate-600 dark:text-slate-50'>
-                    <HistoryIcon />
-                </IconButton>
+                <Link to='history'>
+                    <IconButton className='text-slate-600 dark:text-slate-50'>
+                        <HistoryIcon />
+                    </IconButton>
+                </Link>
             </Tooltip>
 
             <Tooltip title="Charts" placement='right' arrow>
-                <IconButton className='text-slate-600 dark:text-slate-50'>
-                    <BarChartIcon />
-                </IconButton>
+                <Link to='charts'>
+                    <IconButton className='text-slate-600 dark:text-slate-50'>
+                        <BarChartIcon />
+                    </IconButton>
+                </Link>
             </Tooltip>
 
             <Tooltip title="Theme Change" placement='right' arrow>

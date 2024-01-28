@@ -12,7 +12,7 @@ const DashbordNavbar = () => {
     const [profileOpen, setProfileOpen] = useState(false)
 
     return (
-        <nav className='backdrop-blur shadow-sm px-6 py-2 flex items-center justify-between supports-backdrop-blur:bg-white/60 dark:bg-transparent fixed dark:bg-slate-800 dart:text-slate-100 right-0 left-0 top-0 z-10'>
+        <nav className='backdrop-blur h-12 shadow-sm px-6 py-2 flex items-center justify-between supports-backdrop-blur:bg-white/60 dark:bg-transparent  bg-slate-200/50 dark:bg-slate-900 dart:text-slate-100 right-0 left-0 top-0 z-10'>
             <div>
                 <h1 className='text-1xl dark:text-slate-100 font-bold max-sm:text-sm'>Hi, Welcome Back <span className='text-blue-500'> {user.displayName || 'User'}!</span> 👋</h1>
             </div>
