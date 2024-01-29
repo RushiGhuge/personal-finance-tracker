@@ -35,16 +35,16 @@ const Dashbord = () => {
     <div className='w-full'>
       <section className='flex w-full'>
 
-        <section className='w-12'>
+        <section className='w-14'>
           <SideNavbar />
         </section>
 
         <section className="w-full p-0 overflow-hidden">
-          <div className="fixed top-0 left-0 right-0 z-30">
+          <div className="">
             <DashbordNavbar />
           </div>
 
-          <div className="pt-12">
+          <div className="">
             <Routes>
               <Route path='/' element={<MainContainer />}></Route>
               <Route path='/history' element={<History />}></Route>

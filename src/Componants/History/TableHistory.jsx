@@ -61,7 +61,7 @@ const TableHistory = ({ transitionData }) => {
                 <table className="rounded-md w-full text-left histroy-table text-slate-900 dark:text-slate-50 bg-slate-50 dark:bg-black/10  ">
 
                     <thead>
-                        <tr className="">
+                        <tr className="border-b">
                             <th className="min-w-32 ">Name</th>
                             <th className="min-w-32 ">Credit/Debit</th>
                             <th className="min-w-32 ">Amount</th>
@@ -81,7 +81,7 @@ const TableHistory = ({ transitionData }) => {
                             });
 
                             return (
-                                <tr key={transaction.id}>
+                                <tr key={transaction.id} className="hover:bg-sky-300/25 border-b">
                                     <td>{transaction.name}</td>
                                     <td >
                                         <span className={`${transaction.type === 'Credit' ? 'bg-green-300 text-green-950' : 'bg-red-300 text-red-950'} px-2 py-1 rounded-md`}>

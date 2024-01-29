@@ -19,7 +19,7 @@ const SkeletonComponant = () => {
 
         <div className='px-6 flex flex-col gap-2 w-full'>
 
-            <nav className='px-6 py-3 flex items-center justify-between fixed bg-slate-50 dark:bg-black/50 right-0 left-0 top-0 z-10'>
+            <nav className='px-6 py-3 flex items-center justify-between fixed bg-slate-50 dark:bg-slate-900 right-0 left-0 top-0 z-10'>
                 <div>
                     <h1 className='text-1xl  font-bold'>Hi, Welcome Back <span className='text-blue-500'> User!</span> 👋</h1>
                 </div>

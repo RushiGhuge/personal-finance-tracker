@@ -1,9 +1,9 @@
 import React, { lazy, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, Tooltip } from '@mui/material';
+import { Avatar, IconButton, Tooltip } from '@mui/material';
 import { useSelector } from 'react-redux';
 const ProfilePage = lazy(() => import('../Profile/ProfilePage'))
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
 const DashbordNavbar = () => {
@@ -12,24 +12,32 @@ const DashbordNavbar = () => {
     const [profileOpen, setProfileOpen] = useState(false)
 
     return (
-        <nav className='backdrop-blur h-12 shadow-sm px-6 py-2 flex items-center justify-between supports-backdrop-blur:bg-white/60 dark:bg-transparent  bg-slate-200/50 dark:bg-slate-900 dart:text-slate-100 right-0 left-0 top-0 z-10'>
-            <div>
-                <h1 className='text-1xl dark:text-slate-100 font-bold max-sm:text-sm'>Hi, Welcome Back <span className='text-blue-500'> {user.displayName || 'User'}!</span> 👋</h1>
-            </div>
-
-            <div className='flex gap-10 items-center'>
-                <div className='flex items-center p-1 gap-1 bg-slate-200 dark:bg-slate-800 rounded-md px-2 max-sm:hidden '>
-
-                    <SearchIcon />
-                    <input className="bg-inherit  rounded-full outline-none " type="text" placeholder='Search' />
+        <nav className='h-12 flex items-center justify-end p-6 pt-1 pb-0'>
+            <div className='flex gap-3 items-center'>
+                <div>
+                    <Tooltip title="Search">
+                        <IconButton>
+                            <SearchIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Notifications">
+                        <IconButton>
+                            <NotificationsIcon />
+                        </IconButton>
+                    </Tooltip>
                 </div>
 
-                <div>
+                <div className="cursor-pointer">
                     <Tooltip title="Profile" arrow>
                         <div size='small' onClick={() => {
                             setProfileOpen(true)
                         }}>
-                            <Avatar sx={{ width: '35px', height: '35px' }} alt={user.email} src={user.photoURL} />
+                            <div className="flex items-center gap-2">
+                                <Avatar sx={{ width: '30px', height: '30px',border:"2px solid white" }} alt={user.email} src={user.photoURL} />
+                                <p>
+                                    {user.displayName || 'User'}
+                                </p>
+                            </div>
                         </div>
                     </Tooltip>
                 </div>

@@ -94,7 +94,7 @@ const ProfilePage = ({ profileOpen, setProfileOpen, user }) => {
                 <div className='bg-slate-100 dark:bg-slate-900    text:slate-900 backdrop-sm w-screen h-screen'>
 
                     <AppBar sx={{ position: 'relative' }} className='bg-slate-900 dark:bg-slate-200'>
-                        <Toolbar className='bg-slate-800 w-full dark:bg-slate-800'>
+                        <Toolbar className='bg-slate-600 w-full dark:bg-slate-800'>
                             <IconButton
                                 edge="start"
                                 color="inherit"
@@ -108,7 +108,7 @@ const ProfilePage = ({ profileOpen, setProfileOpen, user }) => {
                                 Finance 💰
                             </Typography>
 
-                            <Button autoFocus variant='contained' color="error" onClick={logOut}>
+                            <Button autoFocus size='small' variant='contained' color="error" onClick={logOut}>
                                 Logout
                             </Button>
                         </Toolbar>
@@ -123,10 +123,10 @@ const ProfilePage = ({ profileOpen, setProfileOpen, user }) => {
                                 <h1 className='text-xl font-bold'>{user.displayName}</h1>
                             </div>
 
-                            <div className='flex flex-col gap-2 '>
+                            <div className='flex flex-col gap-2 text-lg '>
                                 <p>Email : {user.email}</p>
                                 <p>Phone : {user.phoneNumber}</p>
-                                <p className={`${user.emailVerified ? 'text-green-600' : "text-red-700"}`}>{user.emailVerified ? 'Email Is Verified! ✅' : 'Email Is Nor Verified! ❌ '}</p>
+                                <p className={`${user.emailVerified ? 'text-green-700' : "text-red-700"} text-xl font-bold`}>{user.emailVerified ? 'Email Is Verified! ✅' : 'Email Is Nor Verified! ❌ '}</p>
                             </div>
 
                             <div className="shadow-2xl balance-container rounded-xl p-6 max-lg:col-span-2 max-sm:col-span-1">
@@ -134,7 +134,7 @@ const ProfilePage = ({ profileOpen, setProfileOpen, user }) => {
                             </div>
 
                             <div>
-                                <Button variant='contained' color='error' onClick={clearAllHistory}>Clear All History</Button>
+                                <Button size='small' color='error' onClick={clearAllHistory}>Clear All History</Button>
                             </div>
 
                         </div>

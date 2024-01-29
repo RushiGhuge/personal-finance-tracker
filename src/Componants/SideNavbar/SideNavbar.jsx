@@ -51,12 +51,12 @@ const SideNavbar = () => {
     }
 
     return (
-        <nav className="fixed bg-slate-50 dark:bg-slate-900 text-slate-100 h-screen pt-14 z-10 flex flex-col items-center gap-2">
+        <nav className="fixed w-12 bg-slate-700 dark:bg-slate-700 text-slate-100 h-screen pt-3 z-1000 flex flex-col items-center gap-2">
 
             <Tooltip title="Dashbord" placement='right' arrow>
                 <Link to=''>
-                    <IconButton className='text-slate-600 dark:text-slate-50'>
-                        <DashboardIcon />
+                    <IconButton className=' dark:text-slate-700'>
+                        <DashboardIcon className="text-slate-200 hover:text-white  "/>
                     </IconButton>
                 </Link>
             </Tooltip>
@@ -65,7 +65,7 @@ const SideNavbar = () => {
             <Tooltip title="History" placement='right' arrow>
                 <Link to='history'>
                     <IconButton className='text-slate-600 dark:text-slate-50'>
-                        <HistoryIcon />
+                        <HistoryIcon className="text-slate-200 hover:text-white  "/>
                     </IconButton>
                 </Link>
             </Tooltip>
@@ -73,20 +73,20 @@ const SideNavbar = () => {
             <Tooltip title="Charts" placement='right' arrow>
                 <Link to='charts'>
                     <IconButton className='text-slate-600 dark:text-slate-50'>
-                        <BarChartIcon />
+                        <BarChartIcon className="text-slate-200 hover:text-white " />
                     </IconButton>
                 </Link>
             </Tooltip>
 
             <Tooltip title="Theme Change" placement='right' arrow>
                 <IconButton className='text-slate-600 dark:text-slate-50' onClick={toggleTheme}>
-                    <Brightness4Icon />
+                    <Brightness4Icon className="text-slate-200 hover:text-white "/>
                 </IconButton>
             </Tooltip>
 
             <Tooltip title="Lot Out" placement='right' arrow>
-                <IconButton className='text-slate-600 dark:text-slate-50' onClick={logOut}>
-                    <LogoutIcon />
+                <IconButton  onClick={logOut}>
+                    <LogoutIcon className="text-slate-200 hover:text-white "/>
                 </IconButton>
             </Tooltip>
         </nav>

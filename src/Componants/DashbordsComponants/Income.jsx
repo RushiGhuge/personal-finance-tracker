@@ -28,6 +28,8 @@ const Income = () => {
 
   const persentage = calculatePercentage();
 
+
+
   return (
     <div className='flex flex-col justify-between h-full'>
 
@@ -46,6 +48,8 @@ const Income = () => {
 
       <div>
         <h1 className='text-3xl font-bold italic  '>₹{FormatedNumber(totalIncome)}</h1>
+
+
         <div className='flex justify-between'>
           <span className='text-gray-500'>this week's Income</span>
           <span className={` px-2 rounded-full ${persentage < 0 ? 'text-red-900 bg-red-300' : 'text-green-900 bg-green-300'} `}>{persentage}%</span>
@@ -57,5 +61,8 @@ const Income = () => {
     </div>
   )
 }
+
+
+
 
 export default Income
